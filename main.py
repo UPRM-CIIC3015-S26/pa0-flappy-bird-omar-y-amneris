@@ -14,9 +14,9 @@ pygame.display.set_caption("Flappy Bird")
 # Colors -->
 # NOTE: This is in the RGB (Red, Green, Blue) format
 WHITE = (255, 255, 255)
-GREEN = (0, 255, 0)
+BEIGE = (218 ,165, 32)
 BLACK = (0, 0, 0)
-PLAYER = (255, 255, 255)
+PLAYER = (255,102,0)
 
 # Font Size -->
 big_font = pygame.font.SysFont(None, 80)
@@ -114,8 +114,8 @@ while running:
     # The color of the player is currently white, let's change that a bit! You are free to change the bird's
     # to whatever you wish. You will need to head back to where the PLAYER variable was created and change the values.
     pygame.draw.rect(screen, PLAYER, (bird_x, bird_y, 30, 30)) # Drawing the bird (You don't need to touch this line!)
-    pygame.draw.rect(screen, GREEN, (pipe_x, 0, pipe_width, pipe_height))
-    pygame.draw.rect(screen, GREEN, (pipe_x, pipe_height + pipe_gap, pipe_width, 600))
+    pygame.draw.rect(screen, BEIGE,  (pipe_x, 0, pipe_width, pipe_height))
+    pygame.draw.rect(screen, BEIGE, (pipe_x, pipe_height + pipe_gap, pipe_width, 600))
     score_text = small_font.render(str(score), True, WHITE)
     screen.blit(score_text, (score_x, score_y))
 
