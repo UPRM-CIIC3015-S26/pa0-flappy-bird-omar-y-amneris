@@ -92,8 +92,8 @@ while running:
                     # After the bird crashes with a pipe the when spawning back the player it doesn't appear.
                     # It is your job to find why this is happening! (Hint: What variable stores the y coordinates
                     # of the bird)
-                    bird_velocity = 0
                     bird_y = 200
+                    bird_velocity = 0
                     pipe_x = 400
                     score = 0
                     game_over = False
@@ -111,10 +111,13 @@ while running:
             # TODO 4: Fixing the scoring
             # When you pass through the pipes the score should be updated to the current score + 1. Implement the
             # logic to accomplish this scoring system.
-            score = 1
+            score += 1
+
 
         if bird_y > 600 or bird_y < 0:
             game_over = True
+            score = 0
+            game_started = False
 
         bird_rect = pygame.Rect(bird_x, bird_y, 30, 30)
         top_pipe_rect = pygame.Rect(pipe_x, 0, pipe_width, pipe_height)
