@@ -1,5 +1,15 @@
 import pygame, random
+from pygame.mixer import init
+
 pygame.init()
+pygame.mixer,init()
+# Audio
+pygame.mixer.music.load('sounds/original_soundtrack-gaming-game-video-game-music-474517.mp3')
+pygame.mixer.music.play(-1)
+
+jump_sound = pygame.mixer.Sound('sounds/mixkit-arcade-game-jump-coin-216.wav')
+jump_sound.set_volume(0.5)
+gameover_sound = pygame.mixer.Sound('sounds/mixkit-arcade-retro-game-over-213.wav')
 '''
 Welcome to PA0 – Flappy Bird! Throughout this code, you are going to find a recreation of a game you have probably
 heard of before. This is an introductory assignment designed to help you familiarize yourself with what you can expect 
@@ -34,7 +44,7 @@ score_y = 10
 
 # Player Variables -->
 bird_x = 50
-bird_y = 300
+bird_y = 200
 bird_velocity = 1
 # TODO 1: Tweaking the physics
 # Looks like the player is falling too quickly not giving a change to flap it's wing, maybe tweak around with the value of this variable
@@ -71,15 +81,19 @@ while running:
             if event.key == pygame.K_SPACE:
                 if game_started == False:
                     game_started = True
+                    pygame.mixer.music.play(-1)
                     bird_velocity = jump
+                    jump_sound.play()
                 elif game_over == False:
                     bird_velocity = jump
+                    jump_sound.play()
                 else:
                     # TODO 3: Spawning back the Player
                     # After the bird crashes with a pipe the when spawning back the player it doesn't appear.
                     # It is your job to find why this is happening! (Hint: What variable stores the y coordinates
                     # of the bird)
                     bird_velocity = 0
+                    bird_y = 200
                     pipe_x = 400
                     score = 0
                     game_over = False
@@ -126,6 +140,9 @@ while running:
         screen.blit(instruction_text, (instruction_x, instruction_y))
 
     if game_over: # GameOver UI -->
+        pygame.mixer.music.stop()
+        game_started = False
+        gameover_sound.play()
         loss_text = small_font.render("Press Space to restart...", True, WHITE)
         screen.blit(loss_text, (85, 200))
 
