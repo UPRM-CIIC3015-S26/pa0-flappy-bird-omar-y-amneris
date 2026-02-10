@@ -14,16 +14,15 @@ The project is designed as an introductory programming assignment (PA0). Most of
 ## 👥 Team Information
 
 ### Partner #1
-- **Name:**
-- **Student Number:**
-- **Email:**
+- **Name: Amneris T. Torres De Jesus**
+- **Student Number: 802-25-2041**
+- **Email: amneris.torres4@upr.edu**
 
 ### Partner #2
-- **Name:**
-- **Student Number:**
-- **Email:**
+- **Name: Omar Y. Gonzalez Journet**
+- **Student Number: 802-22-1532**
+- **Email: omar.gonzalez38@upr.edu**
 
 ## ⭐ Bonus Features (Optional)
 List and briefly describe any additional features or enhancements implemented beyond the basic requirements.
-- Bonus Feature 1
-- Bonus Feature 2
+- Bonus Feature 1 added music
